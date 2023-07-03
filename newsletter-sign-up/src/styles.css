@@ -1,14 +1,46 @@
-body {
-  height: 100vh;
-  background-color: #36384d;
-  display: grid;
-  place-content: center;
+:root {
+  --primary-color: #36384d;
 }
 
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-color: var(--primary-color);
+}
+
+section::before {
+  content: "";
+  background: url("./../assets/images/illustration-sign-up-mobile.svg") no-repeat;
+  background-size: cover;
+  height: 34.1%;
+  width: 100%;
+  display: block;
+}
 .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+section {
+  background-color: white;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 767px) {
+  body {
+    display: grid;
+    place-content: center;
+  }
+  section::before {
+    background: url("./../assets/images/illustration-sign-up-desktop.svg");
+  }
 }
